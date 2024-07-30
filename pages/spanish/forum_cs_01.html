@@ -1,0 +1,120 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/index.css"/>
+    <link rel="stylesheet" href="../../styles/forum.css"/>
+    <title>Foro | ¿Qué significa CLR en C#?</title>
+</head>
+<body>
+    <!-- BARRA DE NAVEGACIÓN -->
+	<div class="navbar">
+        <a href="../../index_es.html">
+            <img id="logo" src="../../img/logo.png">
+        </a>
+		<a href="../english/forum_cs_01.html"><img id="language-switch" src="../../img/flag_england.gif"></a>
+	</div>
+
+    <div class="horizontal-line"></div>
+
+    <div class="side-by-side-container">
+        <forum-comments>
+        <div class="forum-content">
+            <div class="forum-content-header">
+                <h3>¿Qué significa CLR en C#?</h3>
+            </div>
+            <p>
+                Hola a todos,<br>
+                He estado leyendo sobre C# y sigo encontrándome con el término CLR.<br>
+                ¿Alguien puede explicar qué significa y qué hace?
+            </p>
+            <br>
+            <div class="forum-content-info">
+                <h4>Paul</h4>
+                <h5>Publicado: 23 de julio de 2024 10:12 AM</h5>
+            </div>
+        </div>
+        <br>
+        <div class="forum-content">
+            <div class="forum-content-header">
+                <h3> </h3>
+            </div>
+            <p>
+                ¡Hola, Paul! CLR significa Common Language Runtime. Básicamente, es el compilador para C#.<br>
+                Toma tu código C# y lo convierte en código de máquina que la computadora puede entender y ejecutar.
+            </p>
+            <br>
+            <div class="forum-content-info">
+                <h4>Kat</h4>
+                <h5>Publicado: 23 de julio de 2024 10:25 AM</h5>
+            </div>
+        </div>
+        <br>
+        <div class="forum-content">
+            <div class="forum-content-header">
+                <h3>¡Resuelto!</h3>
+            </div>
+            <p>
+                En realidad, Kat, eso no es del todo correcto. Déjame explicar con más detalle.<br>
+                <br>
+                CLR significa Common Language Runtime, pero no es solo un compilador. Es el componente de máquina virtual<br>
+                del marco .NET de Microsoft. El CLR gestiona la ejecución de programas .NET y proporciona servicios importantes como:
+            </p>
+            <ul>
+                <li>
+                    Gestión de Memoria: El CLR se encarga de la asignación de memoria y la recolección de basura, asegurando un uso eficiente de la memoria y ayudando a prevenir fugas de memoria.
+                </li>
+                <li>
+                    Seguridad: Impone la seguridad de acceso al código (CAS) y asegura que el código se ejecute en un entorno seguro.
+                </li>
+                <li>
+                    Manejo de Excepciones: Proporciona un mecanismo robusto para manejar excepciones, permitiendo un manejo de errores consistente y fiable a través de diferentes lenguajes .NET.
+                </li>
+                <li>
+                    Compilación Just-In-Time (JIT): El CLR convierte el código de Lenguaje Intermedio (IL) en código de máquina nativo justo antes de que se ejecute, optimizando el rendimiento.
+                </li>
+                <li>
+                    Seguridad de Tipos: Asegura que el código acceda solo a ubicaciones de memoria válidas, evitando errores de tipo y desbordamientos de búfer.
+                </li>
+            </ul>
+            <p>Aquí hay una vista simplificada de cómo funciona:</p>
+            <ul>
+                <li>Compilación: Tu código C# se compila primero en un lenguaje intermedio (IL) por el compilador de C#.</li>
+                <li>Ejecutión: Cuando ejecutas tu aplicación, el CLR usa la compilación JIT para convertir el código IL en código de máquina nativo específico para el sistema operativo y la arquitectura del CPU.</li>
+            </ul>
+            <p>Así que, el CLR es mucho más que un compilador; es un entorno de ejecución que proporciona diversos servicios críticos para asegurar que tus aplicaciones .NET funcionen sin problemas y de manera eficiente.</p>
+            <br>
+            <div class="forum-content-info">
+                <h4>Alejo</h4>
+                <h5>Publicado: 23 de julio de 2024 10:40 AM</h5>
+            </div>
+        </div>
+    </forum-comments>
+        <div class="link-section">
+            <div class="link-section-header">
+                <h3>Más Foros...</h3>
+            </div>
+            <div class="link-section-box">
+				<img src="../../img/languages/java.png" />
+				<a href="../spanish/forum_java_01.html">How does the ClassLoader work?</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/java.png" />
+				<a href="../spanish/forum_java_02.html">Resetting a StringBuilder instance</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/cpp.png" />
+				<a href="../spanish/forum_cpp_01.html">Preventing dangling pointers in modern C++ 20</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/cs.png" />
+				<a href="../spanish/forum_cs_01.html">What does CLR mean in C#?</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/java.png" />
+				<a href="../spanish/forum_java_03.html">Why isn't multiple inheritance a thing?</a>
+			</div>
+        </div>
+    </div>
+</body>
+</html>

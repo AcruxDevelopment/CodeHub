@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/index.css"/>
+    <link rel="stylesheet" href="../../styles/forum.css"/>
+    <title>Forum | Why isn't multiple inheritance a thing?</title>
+</head>
+<body>
+    <!-- NAVBAR -->
+	<div class="navbar">
+        <a href="../../index_en.html">
+            <img id="logo" src="../../img/logo.png">
+        </a>
+		<a href="../spanish/forum_java_03.html"><img id="language-switch" src="../../img/flag_spain.gif"></a>
+	</div>
+
+    <div class="horizontal-line"></div>
+
+    <div class="side-by-side-container">
+        <forum-comments>
+        <div class="forum-content">
+            <div class="forum-content-header">
+                <h3>Why isn't multiple inheritance a thing?</h3>
+            </div>
+            <p>
+                I am curious about why Java does not allow multiple inheritance. Does anyone know the reason?
+            </p>
+            <br>
+            <div class="forum-content-info">
+                <h4>Maria</h4>
+                <h5>Posted: Jul 23, 2024 10:12 AM</h5>
+            </div>
+        </div>
+        <br>
+        <div class="forum-content">
+            <div class="forum-content-header">
+                <h3> </h3>
+            </div>
+            <p>
+                Hello! The main reason Java does not allow multiple inheritance is that it is unnecessary. You can use interfaces to achieve the same as multiple inheritance. You just need to implement multiple interfaces and that's it. Java only allows single inheritance to keep things simple and clear.
+            </p>
+            <br>
+            <div class="forum-content-info">
+                <h4>Phil</h4>
+                <h5>Posted: Jul 24, 2024 10:25 AM</h5>
+            </div>
+        </div>
+        <br>
+        <div class="forum-content">
+            <div class="forum-content-header">
+                <h3>Resolved!</h3>
+            </div>
+            <p>
+                Hello, Phil is partly right, but there is a more technical and important point. Java does not allow multiple inheritance to avoid the complexity and problems that arise from it, such as the "Diamond Problem". This problem occurs when a class inherits from two classes that have a method with the same name and signature. This can cause ambiguity about which method should be called.
+
+                Java opts for a simpler approach using interfaces and single inheritance to maintain clarity and avoid these problems. Starting from Java 8, interfaces can have default methods, which allows some functionality similar to multiple inheritance without the associated problems.
+            </p>
+            <br>
+            <div class="forum-content-info">
+                <h4>Kat</h4>
+                <h5>Posted: Jul 24, 2024 10:40 AM</h5>
+            </div>
+        </div>
+    </forum-comments>
+        <div class="link-section">
+            <div class="link-section-header">
+                <h3>More Forums...</h3>
+            </div>
+            <div class="link-section-box">
+				<img src="../../img/languages/java.png" />
+				<a href="../english/forum_java_01.html">How does the ClassLoader work?</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/java.png" />
+				<a href="../english/forum_java_02.html">Resetting a StringBuilder instance</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/cpp.png" />
+				<a href="../english/forum_cpp_01.html">Preventing dangling pointers in modern C++ 20</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/cs.png" />
+				<a href="../english/forum_cs_01.html">What does CLR mean in C#?</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/java.png" />
+				<a href="../english/forum_java_03.html">Why isn't multiple inheritance a thing?</a>
+			</div>
+        </div>
+    </div>
+</body>
+</html>

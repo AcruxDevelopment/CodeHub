@@ -1,0 +1,102 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/index.css"/>
+    <link rel="stylesheet" href="../../styles/forum.css"/>
+    <title>Foro | ¿Cómo funciona el ClassLoader?</title>
+</head>
+<body>
+    <!-- BARRA DE NAVEGACIÓN -->
+	<div class="navbar">
+        <a href="../../index_es.html">
+            <img id="logo" src="../../img/logo.png">
+        </a>
+		<a href="../english/forum_java_01.html"><img id="language-switch" src="../../img/flag_england.gif"></a>
+	</div>
+
+    <div class="horizontal-line"></div>
+
+    <div class="side-by-side-container">
+        <forum-comments>
+        <div class="forum-content">
+            <div class="forum-content-header">
+                <h3>¿Cómo funciona el ClassLoader?</h3>
+            </div>
+            <p>
+                Hola a todos,
+                Estoy tratando de entender cómo funciona el ClassLoader en Java. ¿Alguien puede explicármelo?
+            </p>
+            <br>
+            <div class="forum-content-info">
+                <h4>Federico</h4>
+                <h5>Publicado: 23 de julio de 2024 10:12 AM</h5>
+            </div>
+        </div>
+        <br>
+        <div class="forum-content">
+            <div class="forum-content-header">
+                <h3> </h3>
+            </div>
+            <p>
+                Claro, puedo ayudar con eso. El ClassLoader en Java es responsable de crear instancias de clases en tiempo de ejecución. 
+                Básicamente, ejecuta el método principal de la clase que deseas cargar y luego inicializa todas las variables estáticas y 
+                métodos.
+            </p>
+            <br>
+            <div class="forum-content-info">
+                <h4>Steve</h4>
+                <h5>Publicado: 23 de julio de 2024 10:25 AM</h5>
+            </div>
+        </div>
+        <br>
+        <div class="forum-content">
+            <div class="forum-content-header">
+                <h3>¡Resuelto!</h3>
+            </div>
+            <p>
+                En realidad, eso no es del todo correcto, Steve. Permíteme aclarar. El ClassLoader en Java es una parte del 
+                Entorno de Ejecución de Java que carga dinámicamente clases de Java en la Máquina Virtual de Java (JVM). El 
+                ClassLoader no ejecuta el método principal ni inicializa variables y métodos estáticos por sí mismo. En su lugar, 
+                carga el bytecode de las clases desde el sistema de archivos, la red u otras fuentes en la memoria. Una vez que 
+                una clase está cargada, la JVM puede enlazarla e inicializarla, lo que incluye ejecutar inicializadores estáticos 
+                y asignar variables estáticas.
+                <br>
+                En resumen, el ClassLoader es responsable de encontrar y cargar archivos de clase, pero no ejecuta ningún código 
+                por sí mismo. Eso lo maneja la JVM después de que la clase está cargada.
+            </p>
+            <br>
+            <div class="forum-content-info">
+                <h4>Josh</h4>
+                <h5>Publicado: 23 de julio de 2024 10:40 AM</h5>
+            </div>
+        </div>
+    </forum-comments>
+        <div class="link-section">
+            <div class="link-section-header">
+                <h3>Más Foros...</h3>
+            </div>
+            <div class="link-section-box">
+				<img src="../../img/languages/java.png" />
+				<a href="../spanish/forum_java_01.html">¿Cómo funciona el ClassLoader?</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/java.png" />
+				<a href="../spanish/forum_java_02.html">Restableciendo una instancia de StringBuilder</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/cpp.png" />
+				<a href="../spanish/forum_cpp_01.html">Previniendo punteros colgantes en C++ 20 moderno</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/cs.png" />
+				<a href="../spanish/forum_cs_01.html">¿Qué significa CLR en C#?</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/java.png" />
+				<a href="../spanish/forum_java_03.html">¿Por qué no existe la herencia múltiple?</a>
+			</div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/index.css"/>
+    <link rel="stylesheet" href="../../styles/forum.css"/>
+    <title>Foro | Por que no existe la herencia multiple?</title>
+</head>
+<body>
+    <!-- BARRA DE NAVEGACIÓN -->
+	<div class="navbar">
+        <a href="../../index_es.html">
+            <img id="logo" src="../../img/logo.png">
+        </a>
+		<a href="../english/forum_java_03.html"><img id="language-switch" src="../../img/flag_england.gif"></a>
+	</div>
+
+    <div class="horizontal-line"></div>
+
+    <div class="side-by-side-container">
+        <forum-comments>
+        <div class="forum-content">
+            <div class="forum-content-header">
+                <h3>Por que no existe la herencia multiple?</h3>
+            </div>
+            <p>
+                Tengo curiosidad sobre por qué Java no permite la herencia múltiple. ¿Alguien sabe la razón?
+            </p>
+            <br>
+            <div class="forum-content-info">
+                <h4>María</h4>
+                <h5>Publicado: 23 de julio de 2024 10:12 AM</h5>
+            </div>
+        </div>
+        <br>
+        <div class="forum-content">
+            <div class="forum-content-header">
+                <h3> </h3>
+            </div>
+            <p>
+                ¡Hola! La razón principal por la que Java no permite la herencia múltiple es porque no es necesario. Puedes usar<br>
+                interfaces para lograr lo mismo que la herencia múltiple. Solo necesitas implementar varias interfaces y listo. Java<br>
+                solo permite la herencia simple para mantener las cosas simples y claras.<br>
+            </p>
+            <br>
+            <div class="forum-content-info">
+                <h4>Phil</h4>
+                <h5>Publicado: 24 de julio de 2024 10:25 AM</h5>
+            </div>
+        </div>
+        <br>
+        <div class="forum-content">
+            <div class="forum-content-header">
+                <h3>¡Resuelto!</h3>
+            </div>
+            <p>
+                Hola, Phil tiene algo de razón, pero hay un punto más técnico e importante. Java no permite la herencia múltiple
+                para evitar la complejidad y los problemas que se derivan de ella, como el "Diamante de la Muerte" o "Diamond
+                Problem". Este problema ocurre cuando una clase hereda de dos clases que tienen un método con el mismo nombre y
+                firma. Esto puede causar ambigüedad sobre cuál método debería ser llamado.
+            
+                Java opta por un enfoque más sencillo usando interfaces y la herencia simple para mantener la claridad y evitar
+                estos problemas. A partir de Java 8, las interfaces pueden tener métodos predeterminados (default), lo que permite
+                alguna funcionalidad similar a la herencia múltiple sin los problemas asociados
+            </p>
+            <br>
+            <div class="forum-content-info">
+                <h4>Kat</h4>
+                <h5>Publicado: 24 de julio de 2024 10:40 AM</h5>
+            </div>
+        </div>
+    </forum-comments>
+        <div class="link-section">
+            <div class="link-section-header">
+                <h3>Más Foros...</h3>
+            </div>
+            <div class="link-section-box">
+				<img src="../../img/languages/java.png" />
+				<a href="../spanish/forum_java_01.html">¿Cómo funciona el ClassLoader?</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/java.png" />
+				<a href="../spanish/forum_java_02.html">Restableciendo una instancia de StringBuilder</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/cpp.png" />
+				<a href="../spanish/forum_cpp_01.html">Previniendo punteros colgantes en C++ 20 moderno</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/cs.png" />
+				<a href="../spanish/forum_cs_01.html">¿Qué significa CLR en C#?</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/java.png" />
+				<a href="../spanish/forum_java_03.html">¿Por qué no existe la herencia múltiple?</a>
+			</div>
+        </div>
+    </div>
+</body>
+</html>

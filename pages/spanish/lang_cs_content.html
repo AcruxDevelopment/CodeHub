@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77aaff 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+        header li {
+            margin: 0 15px;
+        }
+        .main {
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        pre {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            overflow-x: auto;
+            border-radius: 5px;
+        }
+        code {
+            color: #c5d73b;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #333;
+            margin-top: 20px;
+        }
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        section {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>C# Documentation</h1>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#syntax">Syntax</a></li>
+                <li><a href="#oop">OOP Concepts</a></li>
+                <li><a href="#exceptions">Exceptions</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#linq">LINQ</a></li>
+                <li><a href="#async-await">Async/Await</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container main">
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>C# (pronounced "C-sharp") is a modern, object-oriented programming language developed by Microsoft. It is used to create a wide range of applications, including web, mobile, desktop, and cloud-based applications.</p>
+        </section>
+
+        <section id="syntax">
+            <h2>C# Syntax</h2>
+            <h3>Basic Structure</h3>
+            <pre><code>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Hello, World!");
+    }
+}
+            </code></pre>
+        </section>
+
+        <section id="oop">
+            <h2>OOP Concepts</h2>
+            <h3>Classes and Objects</h3>
+            <pre><code>
+using System;
+
+class Dog
+{
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+    public Dog(string name, int age)
+    {
+        Name = name;
+        Age = age;
+    }
+
+    public void Bark()
+    {
+        Console.WriteLine("Woof!");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Dog myDog = new Dog("Buddy", 5);
+        myDog.Bark();
+        Console.WriteLine($"{myDog.Name} is {myDog.Age} years old.");
+    }
+}
+            </code></pre>
+
+            <h3>Inheritance</h3>
+            <pre><code>
+using System;
+
+class Animal
+{
+    public void Eat()
+    {
+        Console.WriteLine("This animal eats food.");
+    }
+}
+
+class Dog : Animal
+{
+    public void Bark()
+    {
+        Console.WriteLine("Woof!");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Dog myDog = new Dog();
+        myDog.Eat();
+        myDog.Bark();
+    }
+}
+            </code></pre>
+
+            <h3>Polymorphism</h3>
+            <pre><code>
+using System;
+
+class Animal
+{
+    public virtual void Sound()
+    {
+        Console.WriteLine("This animal makes a sound.");
+    }
+}
+
+class Dog : Animal
+{
+    public override void Sound()
+    {
+        Console.WriteLine("Woof!");
+    }
+}
+
+class Cat : Animal
+{
+    public override void Sound()
+    {
+        Console.WriteLine("Meow!");
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Animal myDog = new Dog();
+        Animal myCat = new Cat();
+        
+        myDog.Sound();
+        myCat.Sound();
+    }
+}
+            </code></pre>
+
+            <h3>Encapsulation</h3>
+            <pre><code>
+using System;
+
+class Person
+{
+    private string name;
+    private int age;
+
+    public string Name
+    {
+        get { return name; }
+        set { name = value; }
+    }
+
+    public int Age
+    {
+        get { return age; }
+        set { age = value; }
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        Person person = new Person();
+        person.Name = "John";
+        person.Age = 30;
+
+        Console.WriteLine($"{person.Name} is {person.Age} years old.");
+    }
+}
+            </code></pre>
+        </section>
+
+        <section id="exceptions">
+            <h2>Exceptions</h2>
+            <h3>Try-Catch Block</h3>
+            <pre><code>
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            int division = 10 / 0;
+        }
+        catch (DivideByZeroException e)
+        {
+            Console.WriteLine("DivideByZeroException: " + e.Message);
+        }
+    }
+}
+            </code></pre>
+
+            <h3>Throwing Exceptions</h3>
+            <pre><code>
+using System;
+
+class CustomException : Exception
+{
+    public CustomException(string message) : base(message)
+    {
+    }
+}
+
+class Program
+{
+    static void Main()
+    {
+        try
+        {
+            throw new CustomException("This is a custom exception");
+        }
+        catch (CustomException e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+}
+            </code></pre>
+        </section>
+
+        <section id="collections">
+            <h2>Collections</h2>
+            <h3>List Example</h3>
+            <pre><code>
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        List<string> list = new List<string> { "Apple", "Banana", "Cherry" };
+
+        foreach (string fruit in list)
+        {
+            Console.WriteLine(fruit);
+        }
+    }
+}
+            </code></pre>
+
+            <h3>Dictionary Example</h3>
+            <pre><code>
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        Dictionary<string, int> dictionary = new Dictionary<string, int>
+        {
+            { "Apple", 1 },
+            { "Banana", 2 },
+            { "Cherry", 3 }
+        };
+
+        foreach (var item in dictionary)
+        {
+            Console.WriteLine($"{item.Key}: {item.Value}");
+        }
+    }
+}
+            </code></pre>
+        </section>
+
+        <section id="linq">
+            <h2>LINQ</h2>
+            <h3>LINQ Example</h3>
+            <pre><code>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        List<int> numbers = new List<int> { 1, 2, 3, 4, 5 };
+
+        int sum = numbers.Sum();
+
+        Console.WriteLine("Sum: " + sum);
+    }
+}
+            </code></pre>
+
+            <h3>Filtering and Selecting</h3>
+            <pre><code>
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+class Program
+{
+    static void Main()
+    {
+        List<string> strings = new List<string> { "abc", "", "bcd", "", "defg", "jk" };
+
+        var filtered = strings.Where(s => !string.IsNullOrEmpty(s)).ToList();
+
+        foreach (var str in filtered)
+        {
+            Console.WriteLine(str);
+        }
+    }
+}
+            </code></pre>
+        </section>
+
+        <section id="async-await">
+            <h2>Async/Await</h2>
+            <h3>Async Method Example</h3>
+            <pre><code>
+using System;
+using System.Threading.Tasks;
+
+class Program
+{
+    static async Task Main()
+    {
+        await ExampleMethodAsync();
+    }
+
+    static async Task ExampleMethodAsync()
+    {
+        await Task.Delay(1000);
+        Console.WriteLine("Async method completed.");
+    }
+}
+            </code></pre>
+        </section>
+    </div>
+</body>
+</html>

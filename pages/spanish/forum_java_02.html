@@ -1,0 +1,108 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/index.css"/>
+    <link rel="stylesheet" href="../../styles/forum.css"/>
+    <title>Foro | Cómo reiniciar una instancia de StringBuilder?</title>
+</head>
+<body>
+    <!-- BARRA DE NAVEGACIÓN -->
+	<div class="navbar">
+        <a href="../../index_es.html">
+            <img id="logo" src="../../img/logo.png">
+        </a>
+		<a href="../english/forum_java_02.html"><img id="language-switch" src="../../img/flag_england.gif"></a>
+	</div>
+
+    <div class="horizontal-line"></div>
+
+    <div class="side-by-side-container">
+        <forum-comments>
+        <div class="forum-content">
+            <div class="forum-content-header">
+                <h3>Cómo reiniciar una instancia de StringBuilder?</h3>
+            </div>
+            <p>
+                Hola a todos,<br>
+                Tengo una instancia de StringBuilder en mi aplicación Java que quiero reutilizar varias veces.<br>
+                ¿Cuál es la mejor manera de restablecerla?
+            </p>
+            <br>
+            <div class="forum-content-info">
+                <h4>María</h4>
+                <h5>Publicado: 23 de julio de 2024 10:12 AM</h5>
+            </div>
+        </div>
+        <br>
+        <div class="forum-content">
+            <div class="forum-content-header">
+                <h3> </h3>
+            </div>
+            <p>
+                ¡Hola, María! Para restablecer un StringBuilder, solo necesitas establecerlo en null y luego crear una nueva instancia de él. Entonces, puedes hacer algo así:<br>
+                <br>
+                ```<br>
+                StringBuilder sb = new StringBuilder();<br>
+                // Usar el StringBuilder<br>
+                sb = null;<br>
+                sb = new StringBuilder();<br>
+                ```
+            </p>
+            <br>
+            <div class="forum-content-info">
+                <h4>Phil</h4>
+                <h5>Publicado: 24 de julio de 2024 10:25 AM</h5>
+            </div>
+        </div>
+        <br>
+        <div class="forum-content">
+            <div class="forum-content-header">
+                <h3>¡Resuelto!</h3>
+            </div>
+            <p>
+                Lo siento, esa no es la mejor forma. Establecer el StringBuilder en null y crear una nueva instancia es<br>
+                innecesario y puede ser ineficiente. La mejor manera de restablecer una instancia de StringBuilder es usar el método setLength(0),<br>
+                que limpia el contenido del StringBuilder sin crear un nuevo objeto. Así es como puedes hacerlo:<br>
+                <br>
+                ```<br>
+                StringBuilder sb = new StringBuilder();<br>
+                // Usar el StringBuilder<br>
+                sb.setLength(0); // Restablece el StringBuilder<br>
+                ```
+            </p>
+            <br>
+            <div class="forum-content-info">
+                <h4>Phil</h4>
+                <h5>Publicado: 24 de julio de 2024 10:40 AM</h5>
+            </div>
+        </div>
+    </forum-comments>
+        <div class="link-section">
+            <div class="link-section-header">
+                <h3>Más Foros...</h3>
+            </div>
+            <div class="link-section-box">
+				<img src="../../img/languages/java.png" />
+				<a href="../spanish/forum_java_01.html">¿Cómo funciona el ClassLoader?</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/java.png" />
+				<a href="../spanish/forum_java_02.html">Restableciendo una instancia de StringBuilder</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/cpp.png" />
+				<a href="../spanish/forum_cpp_01.html">Previniendo punteros colgantes en C++ 20 moderno</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/cs.png" />
+				<a href="../spanish/forum_cs_01.html">¿Qué significa CLR en C#?</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/java.png" />
+				<a href="../spanish/forum_java_03.html">¿Por qué no existe la herencia múltiple?</a>
+			</div>
+        </div>
+    </div>
+</body>
+</html>

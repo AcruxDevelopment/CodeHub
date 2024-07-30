@@ -1,0 +1,108 @@
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../../styles/index.css"/>
+    <link rel="stylesheet" href="../../styles/forum.css"/>
+    <title>Foro | Previniendo punteros colgantes en C++ 20 moderno</title>
+</head>
+<body>
+    <!-- BARRA DE NAVEGACIÓN -->
+	<div class="navbar">
+        <a href="../../index_es.html">
+            <img id="logo" src="../../img/logo.png">
+        </a>
+		<a href="../english/forum_cpp_01.html"><img id="language-switch" src="../../img/flag_england.gif"></a>
+	</div>
+
+    <div class="horizontal-line"></div>
+
+    <div class="side-by-side-container">
+        <forum-comments>
+        <div class="forum-content">
+            <div class="forum-content-header">
+                <h3>Previniendo punteros colgantes en C++ 20 moderno</h3>
+            </div>
+            <p>
+                Hola a todos,<br>
+                Estoy trabajando con C++20 y quiero asegurarme de prevenir punteros colgantes en mi código. ¿Cuáles son las mejores<br>
+                prácticas y herramientas en C++20 para manejar esto?<br>
+            </p>
+            <br>
+            <div class="forum-content-info">
+                <h4>María</h4>
+                <h5>Publicado: 23 de julio de 2024 10:12 AM</h5>
+            </div>
+        </div>
+        <br>
+        <div class="forum-content">
+            <div class="forum-content-header">
+                <h3> </h3>
+            </div>
+            <p>
+                Hola, Maria. Para prevenir punteros colgantes en C++20, puedes simplemente usar punteros normales (*) con cuidado.
+                Asegúrate de eliminar (delete) los punteros antes de que queden fuera del alcance y trata de evitar el uso de
+                punteros crudos tanto como sea posible. Eso debería resolver el problema.
+            </p>
+            <br>
+            <div class="forum-content-info">
+                <h4>Phil</h4>
+                <h5>Publicado: 24 de julio de 2024 10:25 AM</h5>
+            </div>
+        </div>
+        <br>
+        <div class="forum-content">
+            <div class="forum-content-header">
+                <h3>¡Resuelto!</h3>
+            </div>
+            <p>
+                Hola, User2 tiene buenas intenciones, pero su consejo es un poco básico y puede ser riesgoso. En C++20 moderno, hay
+                mejores prácticas y herramientas más seguras que te pueden ayudar a prevenir punteros colgantes de manera más
+                efectiva:
+                <ul>
+                    <li>
+                        <p>Uso de std::unique_ptr y std::shared_ptr: Estos son punteros inteligentes que automáticamente gestionan la vida útil del objeto al que apuntan. std::unique_ptr es para la propiedad única, y std::shared_ptr es para la propiedad compartida.</p>
+                    </li>
+                    <li>
+                        <p>Uso de std::weak_ptr: Para romper ciclos de referencias que pueden llevar a fugas de memoria cuando se usan std::shared_ptr. std::weak_ptr proporciona una referencia no dueña al objeto gestionado por std::shared_ptr.</p>
+                    </li>
+                    <li>
+                        <p>Uso de std::observer_ptr (C++20): Aunque no gestiona la memoria, std::observer_ptr es útil para señalar que un puntero no posee la memoria a la que apunta, proporcionando una semántica más clara. Ejemplo:</p>
+                    </li>
+                </ul>
+            </p>
+            <br>
+            <div class="forum-content-info">
+                <h4>Kat</h4>
+                <h5>Publicado: 24 de julio de 2024 10:40 AM</h5>
+            </div>
+        </div>
+    </forum-comments>
+        <div class="link-section">
+            <div class="link-section-header">
+                <h3>Más Foros...</h3>
+            </div>
+            <div class="link-section-box">
+				<img src="../../img/languages/java.png" />
+				<a href="../spanish/forum_java_01.html">¿Cómo funciona el ClassLoader?</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/java.png" />
+				<a href="../spanish/forum_java_02.html">Restableciendo una instancia de StringBuilder</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/cpp.png" />
+				<a href="../spanish/forum_cpp_01.html">Previniendo punteros colgantes en C++ 20 moderno</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/cs.png" />
+				<a href="../spanish/forum_cs_01.html">¿Qué significa CLR en C#?</a>
+			</div>
+			<div class="link-section-box">
+				<img src="../../img/languages/java.png" />
+				<a href="../spanish/forum_java_03.html">¿Por qué no existe la herencia múltiple?</a>
+			</div>
+        </div>
+    </div>
+</body>
+</html>

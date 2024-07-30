@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C++ Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77aaff 3px solid;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 16px;
+        }
+
+        header ul {
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        header li {
+            margin: 0 15px;
+        }
+
+        .main {
+            padding: 20px;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        pre {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            overflow-x: auto;
+            border-radius: 5px;
+        }
+
+        code {
+            color: #c5d73b;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #333;
+            margin-top: 20px;
+        }
+
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>C++ Documentation</h1>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#syntax">Syntax</a></li>
+                <li><a href="#oop">OOP Concepts</a></li>
+                <li><a href="#exceptions">Exceptions</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#templates">Templates</a></li>
+                <li><a href="#file-handling">File Handling</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container main">
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>C++ is a powerful, high-performance programming language that supports procedural, object-oriented, and
+                generic programming. It is widely used for system/software development, game development, and in
+                performance-critical applications.</p>
+        </section>
+
+        <section id="syntax">
+            <h2>C++ Syntax</h2>
+            <h3>Basic Structure</h3>
+            <pre><code>
+#include <iostream>
+
+int main() {
+    std::cout << "Hello, World!" << std::endl;
+    return 0;
+}
+            </code></pre>
+        </section>
+
+        <section id="oop">
+            <h2>OOP Concepts</h2>
+            <h3>Classes and Objects</h3>
+            <pre><code>
+#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+class Dog {
+public:
+    std::string name;
+    int age;
+
+    Dog(std::string n, int a) : name(n), age(a) {}
+
+    void bark() {
+        std::cout &lt;&lt; "Woof!" &lt;&lt; std::endl;
+    }
+};
+
+int main() {
+    Dog myDog("Buddy", 5);
+    myDog.bark();
+    std::cout &lt;&lt; myDog.name &lt;&lt; " is " &lt;&lt; myDog.age &lt;&lt; " years old." &lt;&lt; std::endl;
+    return 0;
+}
+            </code></pre>
+
+            <h3>Inheritance</h3>
+            <pre><code>
+#include &lt;iostream&gt;
+
+class Animal {
+public:
+    void eat() {
+        std::cout &lt;&lt; "This animal eats food." &lt;&lt; std::endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void bark() {
+        std::cout &lt;&lt; "Woof!" &lt;&lt; std::endl;
+    }
+};
+
+int main() {
+    Dog myDog;
+    myDog.eat();
+    myDog.bark();
+    return 0;
+}
+            </code></pre>
+
+            <h3>Polymorphism</h3>
+            <pre><code>
+#include &lt;iostream&gt;
+
+class Animal {
+public:
+    virtual void sound() {
+        std::cout &lt;&lt; "This animal makes a sound." &lt;&lt; std::endl;
+    }
+};
+
+class Dog : public Animal {
+public:
+    void sound() override {
+        std::cout &lt;&lt; "Woof!" &lt;&lt; std::endl;
+    }
+};
+
+class Cat : public Animal {
+public:
+    void sound() override {
+        std::cout &lt;&lt; "Meow!" &lt;&lt; std::endl;
+    }
+};
+
+int main() {
+    Animal* myDog = new Dog();
+    Animal* myCat = new Cat();
+
+    myDog->sound();
+    myCat->sound();
+
+    delete myDog;
+    delete myCat;
+
+    return 0;
+}
+            </code></pre>
+
+            <h3>Encapsulation</h3>
+            <pre><code>
+#include &lt;iostream&gt;
+
+class Person {
+private:
+    std::string name;
+    int age;
+
+public:
+    void setName(std::string n) {
+        name = n;
+    }
+
+    std::string getName() {
+        return name;
+    }
+
+    void setAge(int a) {
+        age = a;
+    }
+
+    int getAge() {
+        return age;
+    }
+};
+
+int main() {
+    Person person;
+    person.setName("John");
+    person.setAge(30);
+
+    std::cout &lt;&lt; person.getName() &lt;&lt; " is " &lt;&lt; person.getAge() &lt;&lt; " years old." &lt;&lt; std::endl;
+    return 0;
+}
+            </code></pre>
+        </section>
+
+        <section id="exceptions">
+            <h2>Exceptions</h2>
+            <h3>Try-Catch Block</h3>
+            <pre><code>
+#include &lt;iostream&gt;
+#include &lt;exception&gt;
+
+int main() {
+    try {
+        throw std::runtime_error("An error occurred");
+    } catch (const std::exception& e) {
+        std::cout &lt;&lt; "Exception: " &lt;&lt; e.what() &lt;&lt; std::endl;
+    }
+    return 0;
+}
+            </code></pre>
+
+            <h3>Custom Exceptions</h3>
+            <pre><code>
+#include &lt;iostream&gt;
+#include &lt;exception&gt;
+
+class CustomException : public std::exception {
+private:
+    std::string message;
+
+public:
+    CustomException(const std::string& msg) : message(msg) {}
+
+    const char* what() const noexcept override {
+        return message.c_str();
+    }
+};
+
+int main() {
+    try {
+        throw CustomException("This is a custom exception");
+    } catch (const CustomException& e) {
+        std::cout &lt;&lt; e.what() &lt;&lt; std::endl;
+    }
+    return 0;
+}
+            </code></pre>
+        </section>
+
+        <section id="collections">
+            <h2>Collections</h2>
+            <h3>Vector Example</h3>
+            <pre><code>
+#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+int main() {
+    std::vector&lt;std::string&gt; vec = {"Apple", "Banana", "Cherry"};
+
+    for (const auto& fruit : vec) {
+        std::cout &lt;&lt; fruit &lt;&lt; std::endl;
+    }
+    return 0;
+}
+            </code></pre>
+
+            <h3>Map Example</h3>
+            <pre><code>
+#include &lt;iostream&gt;
+#include &lt;map&gt;
+
+int main() {
+    std::map&lt;std::string, int&gt; myMap = {
+        {"Apple", 1},
+        {"Banana", 2},
+        {"Cherry", 3}
+    };
+
+    for (const auto& pair : myMap) {
+        std::cout &lt;&lt; pair.first &lt;&lt; ": " &lt;&lt; pair.second &lt;&lt; std::endl;
+    }
+    return 0;
+}
+            </code></pre>
+        </section>
+
+        <section id="templates">
+            <h2>Templates</h2>
+            <h3>Function Templates</h3>
+            <pre><code>
+#include &lt;iostream&gt;
+
+template &lt;typename T&gt;
+T add(T a, T b) {
+    return a + b;
+}
+
+int main() {
+    std::cout &lt;&lt; "Int: " &lt;&lt; add(2, 3) &lt;&lt; std::endl;
+    std::cout &lt;&lt; "Double: " &lt;&lt; add(2.5, 3.5) &lt;&lt; std::endl;
+    return 0;
+}
+            </code></pre>
+
+            <h3>Class Templates</h3>
+            <pre><code>
+#include &lt;iostream&gt;
+
+template &lt;typename T&gt;
+class Box {
+private:
+    T value;
+
+public:
+    Box(T v) : value(v) {}
+
+    T getValue() {
+        return value;
+    }
+};
+
+int main() {
+    Box&lt;int&gt; intBox(123);
+    Box&lt;std::string&gt; strBox("Hello");
+
+    std::cout &lt;&lt; "Int value: " &lt;&lt; intBox.getValue() &lt;&lt; std::endl;
+    std::cout &lt;&lt; "String value: " &lt;&lt; strBox.getValue() &lt;&lt; std::endl;
+    return 0;
+}
+            </code></pre>
+        </section>
+
+        <section id="file-handling">
+            <h2>File Handling</h2>
+            <h3>Reading from a File</h3>
+            <pre><code>
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;string&gt;
+
+int main() {
+    std::ifstream infile("example.txt");
+    std::string line;
+
+    if (infile.is_open()) {
+        while (std::getline(infile, line)) {
+            std::cout &lt;&lt; line &lt;&lt; std::endl;
+        }
+        infile.close();
+    } else {
+        std::cout &lt;&lt; "Unable to open file" &lt;&lt; std::endl;
+    }
+    return 0;
+}
+            </code></pre>
+
+            <h3>Writing to a File</h3>
+            <pre><code>
+#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+
+int main() {
+    std::ofstream outfile("example.txt");
+
+    if (outfile.is_open()) {
+        outfile &lt;&lt; "Hello, file!" &lt;&lt; std::endl;
+        outfile.close();
+    } else {
+        std::cout &lt;&lt; "Unable to open file" &lt;&lt; std::endl;
+    }
+    return 0;
+}
+            </code></pre>
+        </section>
+    </div>
+</body>
+
+</html>

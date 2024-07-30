@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Java Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+        header {
+            background: #333;
+            color: #fff;
+            padding-top: 30px;
+            min-height: 70px;
+            border-bottom: #77aaff 3px solid;
+        }
+        header a {
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 15px;
+        }
+        header ul {
+            padding: 0;
+            list-style: none;
+        }
+        header li {
+            display: inline;
+            padding: 0 20px 0 20px;
+        }
+        .main {
+            padding: 20px;
+            background: #fff;
+        }
+        pre {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            overflow-x: auto;
+        }
+        code {
+            color: #c5d73b;
+        }
+        h1, h2, h3, h4, h5, h6 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Java Documentation</h1>
+            <ul>
+                <li><a href="#introduction">Introduction</a></li>
+                <li><a href="#syntax">Syntax</a></li>
+                <li><a href="#oop">OOP Concepts</a></li>
+                <li><a href="#exceptions">Exceptions</a></li>
+                <li><a href="#collections">Collections</a></li>
+                <li><a href="#streams">Streams</a></li>
+                <li><a href="#concurrency">Concurrency</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container main">
+        <section id="introduction">
+            <h2>Introduction</h2>
+            <p>Java is a high-level, class-based, object-oriented programming language that is designed to have as few implementation dependencies as possible. It is a general-purpose programming language intended to let application developers write once, run anywhere (WORA).</p>
+        </section>
+
+        <section id="syntax">
+            <h2>Java Syntax</h2>
+            <h3>Basic Structure</h3>
+            <pre><code>
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello, World!");
+    }
+}
+            </code></pre>
+        </section>
+
+        <section id="oop">
+            <h2>OOP Concepts</h2>
+            <h3>Classes and Objects</h3>
+            <pre><code>
+class Dog {
+    String name;
+    int age;
+
+    Dog(String name, int age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    void bark() {
+        System.out.println("Woof!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog myDog = new Dog("Buddy", 5);
+        myDog.bark();
+        System.out.println(myDog.name + " is " + myDog.age + " years old.");
+    }
+}
+            </code></pre>
+
+            <h3>Inheritance</h3>
+            <pre><code>
+class Animal {
+    void eat() {
+        System.out.println("This animal eats food.");
+    }
+}
+
+class Dog extends Animal {
+    void bark() {
+        System.out.println("Woof!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Dog myDog = new Dog();
+        myDog.eat();
+        myDog.bark();
+    }
+}
+            </code></pre>
+
+            <h3>Polymorphism</h3>
+            <pre><code>
+class Animal {
+    void sound() {
+        System.out.println("This animal makes a sound.");
+    }
+}
+
+class Dog extends Animal {
+    void sound() {
+        System.out.println("Woof!");
+    }
+}
+
+class Cat extends Animal {
+    void sound() {
+        System.out.println("Meow!");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Animal myDog = new Dog();
+        Animal myCat = new Cat();
+        
+        myDog.sound();
+        myCat.sound();
+    }
+}
+            </code></pre>
+
+            <h3>Encapsulation</h3>
+            <pre><code>
+class Person {
+    private String name;
+    private int age;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Person person = new Person();
+        person.setName("John");
+        person.setAge(30);
+
+        System.out.println(person.getName() + " is " + person.getAge() + " years old.");
+    }
+}
+            </code></pre>
+        </section>
+
+        <section id="exceptions">
+            <h2>Exceptions</h2>
+            <h3>Try-Catch Block</h3>
+            <pre><code>
+public class Main {
+    public static void main(String[] args) {
+        try {
+            int division = 10 / 0;
+        } catch (ArithmeticException e) {
+            System.out.println("ArithmeticException: " + e.getMessage());
+        }
+    }
+}
+            </code></pre>
+
+            <h3>Throwing Exceptions</h3>
+            <pre><code>
+class CustomException extends Exception {
+    CustomException(String message) {
+        super(message);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        try {
+            throw new CustomException("This is a custom exception");
+        } catch (CustomException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+            </code></pre>
+        </section>
+
+        <section id="collections">
+            <h2>Collections</h2>
+            <h3>List Example</h3>
+            <pre><code>
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        List<String> list = new ArrayList<>();
+        list.add("Apple");
+        list.add("Banana");
+        list.add("Cherry");
+
+        for (String fruit : list) {
+            System.out.println(fruit);
+        }
+    }
+}
+            </code></pre>
+
+            <h3>Map Example</h3>
+            <pre><code>
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main {
+    public static void main(String[] args) {
+        Map<String, Integer> map = new HashMap<>();
+        map.put("Apple", 1);
+        map.put("Banana", 2);
+        map.put("Cherry", 3);
+
+        for (Map.Entry<String, Integer> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue());
+        }
+    }
+}
+            </code></pre>
+        </section>
+
+        <section id="streams">
+            <h2>Streams</h2>
+            <h3>Stream Example</h3>
+            <pre><code>
+import java.util.Arrays;
+import java.util.List;
+
+public class Main {
+    public static void main(String[] args) {
+        List<Integer> numbers = Arrays.asList(1, 2, 3, 4, 5);
+
+        int sum = numbers.stream()
+                         .mapToInt(Integer::intValue)
+                         .sum();
+
+        System.out.println("Sum: " + sum);
+    }
+}
+            </code></pre>
+
+            <h3>Filtering and Mapping</h3>
+            <pre><code>
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+
+public class Main {
+    public static void main(String[] args) {
+        List<String> strings = Arrays.asList("abc", "", "bcd", "", "defg", "jk");
+
+        List<String> filtered = strings.stream()
+                                       .filter(string -> !string.isEmpty())
+                                       .collect(Collectors.toList());
+
+        System.out.println(filtered);
+    }
+}
+            </code></pre>
+        </section>
+
+        <section id="concurrency">
+            <h2>Concurrency</h2>
+            <h3>Thread Example</h3>
+            <pre><code>
+class MyThread extends Thread {
+    public void run() {
+        System.out.println("MyThread is running");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        MyThread t = new MyThread();
+        t.start();
+    }
+}
+            </code></pre>
+
+            <h3>Runnable Example</h3>
+            <pre><code>
+class MyRunnable implements Runnable {
+    public void run() {
+        System.out.println("MyRunnable is running");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Thread t = new Thread(new MyRunnable());
+        t.start();
+    }
+}
+            </code></pre>
+
+            <h3>ExecutorService Example</h3>
+            <pre><code>
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
+public class Main {
+    public static void main(String[] args) {
+        ExecutorService executor = Executors.newFixedThreadPool(2);
+
+        Runnable task1 = () -> {
+            System.out.println("Task1 is running");
+        };
+
+        Runnable task2 = () -> {
+            System.out.println("Task2 is running");
+        };
+
+        executor.submit(task1);
+        executor.submit(task2);
+
+        executor.shutdown();
+    }
+}
+            </code></pre>
+        </section>
+    </div>
+</body>
+</html>
