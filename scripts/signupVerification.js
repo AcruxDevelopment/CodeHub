@@ -1,21 +1,8 @@
-function Signup(homePagePath)
+function validateSignup()
 {
-	console.log("Submit invoked.");
-
-	//prevent form from resetting
-	event.preventDefault();
-
-	//fmt -> formated
-	const fmtName = document.forms["login-form"]["name"].value.trim();
+	//fmt stands for formated
+	const fmtName = document.forms["login-form"]["username"].value.trim();
 	const fmtPin = document.forms["login-form"]["password"].value.trim();
-
-	//debug formatted inputs
-	console.log("fmtName: " + fmtName);
-	console.log("fmtPin:  " + fmtPin);
-
-	//store form
-	localStorage.setItem("name", fmtName);
-	localStorage.setItem("password",fmtPin);
 
 	//validate name
 	if(fmtName == "")
@@ -55,14 +42,13 @@ function Signup(homePagePath)
 		return false;
 	}
 
-	window.location.href = homePagePath;
 	return true;
 }
 
 function displayPinValidation()
 {
 	//fmt -> formated
-	const fmtName = document.forms["login-form"]["name"].value.trim();
+	const fmtName = document.forms["login-form"]["username"].value.trim();
 	const fmtPin = document.forms["login-form"]["password"].value.trim();
 	const isPinEmpty = fmtPin == "";
 
