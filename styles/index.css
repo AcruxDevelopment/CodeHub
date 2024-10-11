@@ -202,3 +202,39 @@ html, body
 	margin: 25px;
 	color: white;
 }
+
+.nav-right-div
+{
+	display: flex;
+	align-content: space-evenly;
+	gap: 10px;
+}
+
+.nav-user
+{
+	align-items: center;
+	display: flex;
+	padding: 5px;
+	margin: 2px;
+	border-radius: 5px;
+	transition-duration: 250ms;
+}
+
+.nav-user:hover
+{
+	background-color: #b94ce4;
+	cursor: pointer;
+}
+
+.nav-user img
+{
+	height: 30px;
+	width: auto;
+	margin-right: 5px;
+	border-radius: 100%;
+}
+
+.nav-user p
+{
+	color: white;
+}
